@@ -9,16 +9,14 @@ namespace SweepstakesProject
     public class Sweepstakes
     {
         //member variables
-        public int globalRegistrationNumber;
         Dictionary<int, Contestant> dictionaryContestant;
 
 
 
 
         //constructor
-        public Sweepstakes(string name)
+        public Sweepstakes(/*string name*/)
         {
-            globalRegistrationNumber = 0001;
             dictionaryContestant = new Dictionary<int, Contestant>();
         }
 
@@ -28,19 +26,25 @@ namespace SweepstakesProject
         //member methods
         public void RegisterContestant(Contestant contestant)
         {
+            UserInterface.SetRegistrationNumber(contestant);
             UserInterface.SetFirstName(contestant);
-            contestant.registrationNumber = dictionaryContestant.Count; 
-            dictionaryContestant.Add(dictionaryContestant.Count, contestant); //end of method
+            UserInterface.SetLastName(contestant);
+            UserInterface.SetEmail(contestant);
+            dictionaryContestant.Add(contestant.registrationNumber, contestant); //end of method
         }
 
         public string PickWinner()
         {
-            return;
+            Random newWinner = new Random();
+            string outputWinner;
+            int winner = newWinner.Next(dictionaryContestant.Count);
+            outputWinner = $"{dictionaryContestant[winner].registrationNumber}: {dictionaryContestant[winner].registrationNumber} {dictionaryContestant[winner].registrationNumber}";
+            return outputWinner;
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            UserInterface.PrintContestantUI(contestant);
         }
     }
 }

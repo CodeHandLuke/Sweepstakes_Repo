@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class SweepstakesStackManager
+    public class SweepstakesStackManager : ISweepstakesManager
     {
         //member variables
 
@@ -14,10 +14,17 @@ namespace SweepstakesProject
 
 
         //constructor
-
+        public Sweepstakes GetSweepstakes()
+        {
+            throw new NotImplementedException();
+        }
 
 
 
         //member methods
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
