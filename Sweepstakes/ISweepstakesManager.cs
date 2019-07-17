@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class Constestant
+    interface ISweepstakesManager
     {
-        //member variables
+        void InsertSweepstakes(Sweepstakes sweepstakes);
 
-
-
-
-        //constructor
-
-
-
-
-        //member methods
+        Sweepstakes GetSweepstakes();
     }
 }

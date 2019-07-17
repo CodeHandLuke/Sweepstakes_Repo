@@ -4,9 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sweepstakes
+namespace SweepstakesProject
 {
     public class SweepstakesQueueManager
     {
+        //member variables
+
+
+
+
+        //constructor
+
+
+
+
+        //member methods
     }
 }

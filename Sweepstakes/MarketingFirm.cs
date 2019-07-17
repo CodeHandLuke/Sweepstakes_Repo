@@ -4,9 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sweepstakes
+namespace SweepstakesProject
 {
-    class MarketingFirm
+    public class MarketingFirm
     {
+        //member variables
+
+
+
+
+        //constructor
+
+
+
+
+        //member methods
     }
 }
