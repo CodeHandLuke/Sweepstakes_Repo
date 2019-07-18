@@ -14,10 +14,16 @@ namespace SweepstakesProject
 
 
         //constructor
+        public MarketingFirm()
+        {
+
+        }
 
 
 
 
         //member methods
+
+        //The dependency injection would possibly be a method that holds the parameter = ISweepstakesManager manager
     }
 }

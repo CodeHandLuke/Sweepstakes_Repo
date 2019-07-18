@@ -15,8 +15,9 @@ namespace SweepstakesProject
 
 
         //constructor
-        public Sweepstakes(/*string name*/)
+        public Sweepstakes(string name)
         {
+            //name = UserInterface.SweepstakesName(); - create a method in the UI that prompts the firm to create a name for the sweepstakes
             dictionaryContestant = new Dictionary<int, Contestant>();
         }
 
