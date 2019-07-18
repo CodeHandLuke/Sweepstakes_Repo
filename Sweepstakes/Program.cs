@@ -10,28 +10,29 @@ namespace SweepstakesProject
     {
         static void Main(string[] args)
         {
-
-			string managerStyle = UserInterface.ChooseManagerProgram();
-			MarketingFirm bigShotMarketingFirm = new MarketingFirm(ManagerFactory.ChooseManagerProgram(managerStyle));
-
-
-			string sweepstakesGame = "freeCandy";
-            Sweepstakes sweepstakes = new Sweepstakes(sweepstakesGame);
-            Contestant c1 = new Contestant("", "", "");
-            Contestant c2 = new Contestant("", "", "");
-            Contestant c3 = new Contestant("", "", "");
+			//ISweepstakesManager managerProgram;
+			//string managerStyle = UserInterface.ChooseManagerProgram();
+			//managerProgram = ManagerFactory.ChooseManagerProgram(managerStyle);
+			//MarketingFirm bigShotMarketingFirm = new MarketingFirm(managerProgram);
 
 
-            sweepstakes.RegisterContestant(c1);
-			Console.WriteLine("\n");
-			sweepstakes.RegisterContestant(c2);
-			Console.WriteLine("\n");
-			sweepstakes.RegisterContestant(c3);
-			Console.WriteLine("\n");
-			UserInterface.PrintContestantUI(c1);
-			UserInterface.PrintContestantUI(c2);
-			UserInterface.PrintContestantUI(c3);
-			Console.ReadLine();
+			//string sweepstakesGame = "freeCandy";
+   //         Sweepstakes sweepstakes = new Sweepstakes(sweepstakesGame);
+   //         Contestant c1 = new Contestant("Luke", "F", "Lukef@gmail.com");
+   //         Contestant c2 = new Contestant("Jon", "Doe", "jondoe@gmail.com");
+   //         Contestant c3 = new Contestant("Jane", "Doe", "jandoe@gmail.com");
+			//sweepstakes.RegisterContestant(c1);
+			//sweepstakes.RegisterContestant(c2);
+			//sweepstakes.RegisterContestant(c3);
+
+			//Console.WriteLine("\n");
+			//UserInterface.PrintContestantUI(c1);
+			//UserInterface.PrintContestantUI(c2);
+			//UserInterface.PrintContestantUI(c3);
+			//Console.WriteLine(sweepstakes.dictionaryContestant.Count);
+			//Console.ReadLine();
+			//sweepstakes.PickWinner();
+			//Console.ReadLine();
 		}
     }
 }

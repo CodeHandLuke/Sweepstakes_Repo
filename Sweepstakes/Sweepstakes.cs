@@ -9,7 +9,9 @@ namespace SweepstakesProject
     public class Sweepstakes
     {
         //member variables
-        Dictionary<int, Contestant> dictionaryContestant;
+        public Dictionary<int, Contestant> dictionaryContestant;
+		Random newWinner;
+		int registrationNum;
 
 
 
@@ -17,8 +19,9 @@ namespace SweepstakesProject
         //constructor
         public Sweepstakes(string name)
         {
-            //name = UserInterface.SweepstakesName(); - create a method in the UI that prompts the firm to create a name for the sweepstakes
-            dictionaryContestant = new Dictionary<int, Contestant>();
+			newWinner = new Random();
+			dictionaryContestant = new Dictionary<int, Contestant>();
+			registrationNum = 0;
         }
 
 
@@ -27,20 +30,21 @@ namespace SweepstakesProject
         //member methods
         public void RegisterContestant(Contestant contestant)
         {
-            UserInterface.SetRegistrationNumber(contestant);
-            UserInterface.SetFirstName(contestant);
-            UserInterface.SetLastName(contestant);
-            UserInterface.SetEmail(contestant);
-            dictionaryContestant.Add(contestant.registrationNumber, contestant); //end of method
+			contestant.registrationNumber = registrationNum;
+			UserInterface.SetFirstName(contestant);
+			UserInterface.SetLastName(contestant);
+			UserInterface.SetEmail(contestant);
+			dictionaryContestant.Add(registrationNum, contestant);
+			registrationNum++;
         }
 
         public string PickWinner()
         {
-            Random newWinner = new Random();
             string outputWinner;
             int winner = newWinner.Next(dictionaryContestant.Count);
             outputWinner = $"{dictionaryContestant[winner].registrationNumber}: {dictionaryContestant[winner].firstName} {dictionaryContestant[winner].lastName} has won the contest!";
-            return outputWinner;
+			Console.WriteLine(outputWinner);
+			return outputWinner;
         }
 
         public void PrintContestantInfo(Contestant contestant)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class MarketingFirm //This subclass serves as a way 
+    public class MarketingFirm
     {
 		//member variables
 		ISweepstakesManager manager;

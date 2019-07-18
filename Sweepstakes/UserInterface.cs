@@ -24,46 +24,51 @@ namespace SweepstakesProject
 
         public static void SetEmail(Contestant contestant)
         {
-            Console.WriteLine("Please enter contestant's email address:");
-            contestant.email = Console.ReadLine();
-        }
+			bool validEmail = false;
+			string userEmail = "";
+			while (!validEmail)
+			{
+				Console.WriteLine("Please enter contestant's email address:");
+				userEmail = Console.ReadLine();
+				if (!userEmail.Contains("@") || !userEmail.Contains("."))
+				{
+					Console.WriteLine("Invalid input, please try again.");
+				}
 
-        public static void SetRegistrationNumber(Contestant contestant)
-        {
-            Console.WriteLine("Please enter contestant's registration number");
-            contestant.registrationNumber = Convert.ToInt32(Console.ReadLine());
-        }
+				else
+				{
+					validEmail = true;
+				}
+			}
+			contestant.email = userEmail;
+		}
 
-        //public static string UserEmailValidation()
-        //{
-        //    bool validEmail = false;
-        //    string userEmail = "";
-        //    Console.WriteLine("Please enter contestant's email address:");
-        //    while (!validEmail)
-        //    {
-        //        if (!userEmail.Contains("@") && !userEmail.Contains("."))
-        //        {
-        //            Console.WriteLine("Invalid input, please try again.");
-        //            break;
-        //        }
-
-        //        else
-        //        {
-        //            validEmail = true;
-        //        }
-        //    }
-        //    return userEmail;
-        //}
-
-        public static void PrintContestantUI(Contestant contestant)
+		public static void PrintContestantUI(Contestant contestant)
         {
             Console.WriteLine($"{contestant.registrationNumber}: {contestant.firstName} {contestant.lastName}, {contestant.email}");
         }
 
 		public static string ChooseManagerProgram()
 		{
-			Console.WriteLine("Which manager program would you like to use?: Stack or Queue");
-			string input = Console.ReadLine();
+			string input = "";
+			bool validInput = false;
+			while (!validInput)
+			{
+				Console.WriteLine("Which manager program would you like to use?: Type in either 'Stack' or 'Queue' (case sensitive).");
+				input = Console.ReadLine();
+				switch (input)
+				{
+					case "Stack":
+						validInput = true;
+						return input;
+					case "Queue":
+						validInput = true;
+						return input;
+					default:
+						Console.WriteLine("Not a valid manager program");
+						break;
+				}
+			}
 			return input;
 		}
 	}

@@ -10,18 +10,24 @@ namespace SweepstakesProject
 	{
 		public static ISweepstakesManager ChooseManagerProgram(string managerTool)
 		{
+			bool validInput = false;
 			ISweepstakesManager manager = null;
-			switch (managerTool)
+			while (!validInput)
 			{
-				case "Stack":
-					manager = new SweepstakesStackManager();
-					break;
-				case "Queue":
-					manager = new SweepstakesQueueManager();
-					break;
-				default:
-					Console.WriteLine("Not a valid manager program");
-					break;
+				switch (managerTool)
+				{
+					case "Stack":
+						manager = new SweepstakesStackManager();
+						validInput = true;
+						break;
+					case "Queue":
+						manager = new SweepstakesQueueManager();
+						validInput = true;
+						break;
+					default:
+						Console.WriteLine("Not a valid manager program");
+						break;
+				}
 			}
 			return manager;
 		}
