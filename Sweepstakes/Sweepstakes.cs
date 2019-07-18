@@ -39,7 +39,7 @@ namespace SweepstakesProject
             Random newWinner = new Random();
             string outputWinner;
             int winner = newWinner.Next(dictionaryContestant.Count);
-            outputWinner = $"{dictionaryContestant[winner].registrationNumber}: {dictionaryContestant[winner].registrationNumber} {dictionaryContestant[winner].registrationNumber}";
+            outputWinner = $"{dictionaryContestant[winner].registrationNumber}: {dictionaryContestant[winner].firstName} {dictionaryContestant[winner].lastName} has won the contest!";
             return outputWinner;
         }
 

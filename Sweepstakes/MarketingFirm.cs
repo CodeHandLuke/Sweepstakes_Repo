@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class MarketingFirm
+    public class MarketingFirm //This subclass serves as a way 
     {
-        //member variables
-
+		//member variables
+		ISweepstakesManager manager;
 
 
 
         //constructor
-        public MarketingFirm()
+        public MarketingFirm(ISweepstakesManager manager)
         {
-
+			this.manager = manager;
         }
 
 
 
-
-        //member methods
-
-        //The dependency injection would possibly be a method that holds the parameter = ISweepstakesManager manager
+		//member methods
     }
 }

@@ -10,15 +10,28 @@ namespace SweepstakesProject
     {
         static void Main(string[] args)
         {
-            Sweepstakes sweepstakes = new Sweepstakes();
+
+			string managerStyle = UserInterface.ChooseManagerProgram();
+			MarketingFirm bigShotMarketingFirm = new MarketingFirm(ManagerFactory.ChooseManagerProgram(managerStyle));
+
+
+			string sweepstakesGame = "freeCandy";
+            Sweepstakes sweepstakes = new Sweepstakes(sweepstakesGame);
             Contestant c1 = new Contestant("", "", "");
-            Contestant c2 = new Contestant("Jane", "Doe", "janedoe@email.com");
-            Contestant c3 = new Contestant("Ron", "Doe", "Rondoe@email.com");
+            Contestant c2 = new Contestant("", "", "");
+            Contestant c3 = new Contestant("", "", "");
+
 
             sweepstakes.RegisterContestant(c1);
-            Console.ReadLine();
-
-
-        }
+			Console.WriteLine("\n");
+			sweepstakes.RegisterContestant(c2);
+			Console.WriteLine("\n");
+			sweepstakes.RegisterContestant(c3);
+			Console.WriteLine("\n");
+			UserInterface.PrintContestantUI(c1);
+			UserInterface.PrintContestantUI(c2);
+			UserInterface.PrintContestantUI(c3);
+			Console.ReadLine();
+		}
     }
 }

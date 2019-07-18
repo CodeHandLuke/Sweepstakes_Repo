@@ -60,5 +60,11 @@ namespace SweepstakesProject
             Console.WriteLine($"{contestant.registrationNumber}: {contestant.firstName} {contestant.lastName}, {contestant.email}");
         }
 
-    }
+		public static string ChooseManagerProgram()
+		{
+			Console.WriteLine("Which manager program would you like to use?: Stack or Queue");
+			string input = Console.ReadLine();
+			return input;
+		}
+	}
 }
